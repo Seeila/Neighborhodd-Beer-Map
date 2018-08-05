@@ -1,0 +1,36 @@
+#menubutton {
+   position:absolute;
+   width:40px;
+   height:40px;
+   top:20px;
+   left:20px;
+   background:none;
+   border:none;
+}
+
+#menubutton span {
+   position: absolute;
+   top:0;
+   left:0;
+   width:40px;
+   height:5px;
+   border-radius: 10px;
+   background:#fff;
+}
+
+#menubutton span:nth-of-type(2) {
+   top:15px;
+}
+#menubutton span:last-of-type {
+   top:30px;
+}
+
+#searchBar {
+   position:fixed;
+   width:100%;
+   height:calc(100vh - 75px);
+   margin-top:75px;
+   padding: 20px;
+   box-sizing: border-box;
+   background: linear-gradient(to right, #000, var(--gradient-color));
+}
