@@ -1,28 +1,38 @@
-.App {
-  text-align: center;
+@import './normalize.css';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+:root {
+  --main-color: #F59B45;
+  --gradient-color: rgba(22,65,79, 0.6);
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+body {
+   color:#fff;
+   font-family: 'Open sans',arial, sans-serif;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+h1 {
+   margin:  27px 20px 20px 80px;
+   color:#fff;
+   text-transform: uppercase;
+   z-index:100;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
+ h2 {
+   font-weight:500;
+   font-size:1.4em;
+ }
 
-.App-intro {
-  font-size: large;
-}
+ ul {
+   padding-left: 0;
+ }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+ li {
+   list-style: none;
+   line-height:1.5em;
+ }
+
+
+@import './components/header/header.css';
+@import './components/nav/nav.css';
+@import './components/searchBar/searchBar.css';

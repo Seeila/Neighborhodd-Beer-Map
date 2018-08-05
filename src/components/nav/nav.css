@@ -1,0 +1,43 @@
+#menubutton {
+   position:fixed;
+   width:40px;
+   height:40px;
+   top:20px;
+   left:20px;
+   background:none;
+   border:none;
+   z-index:100;
+}
+
+#menubutton span {
+   position: absolute;
+   top:0;
+   left:0;
+   width:40px;
+   height:5px;
+   border-radius: 10px;
+   background:#fff;
+   transition:0.75s;
+}
+
+#menubutton span:nth-of-type(2) {
+   top:15px;
+}
+#menubutton span:last-of-type {
+   top:30px;
+}
+
+
+#menubutton.open span:first-of-type {
+   transform: rotate(45deg);
+   transform-origin: top left;
+}
+
+#menubutton.open span:nth-of-type(2) {
+   display:none;
+}
+#menubutton.open span:last-of-type {
+  top:27px;
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+}

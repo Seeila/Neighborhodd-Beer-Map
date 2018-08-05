@@ -1,0 +1,135 @@
+[
+  {
+    "title": "Brasserie Inter-Pol",
+    "location": {
+      "lat": 50.152029,
+      "lng": 5.768756
+    }
+  },
+  {
+    "title": "Brasserie d'Achouffe",
+    "location": {
+      "lat": 50.14958,
+      "lng": 5.74086
+    }
+  },
+  {
+    "title": "Brasseries Les 3 Fourquets",
+    "location": {
+      "lat": 50.215863,
+      "lng": 5.913561
+    }
+  },
+  {
+    "title": "Brasserie Oxymore",
+    "location": {
+      "lat": 50.159651,
+      "lng": 5.924312
+    }
+  },
+  {
+    "title": "Brasserie Demanez",
+    "location": {
+      "lat": 49.981295,
+      "lng": 5.566674
+    }
+  },
+  {
+    "title": "Brasserie de l'Attrait",
+    "location": {
+      "lat": 50.090829,
+      "lng": 5.680886
+    }
+  },
+  {
+    "title": "Brasserie artisanale de Rulles",
+    "location": {
+      "lat": 49.718362,
+      "lng": 5.557651
+    }
+  },
+  {
+    "title": "Brasserie Artisanale Millevertus",
+    "location": {
+      "lat": 49.695298,
+      "lng": 5.492434
+    }
+  },
+  {
+    "title": "Brasserie des Tchèts",
+    "location": {
+      "lat": 49.915002,
+      "lng": 5.390858
+    }
+  },
+  {
+    "title": "Brasserie Sainte-Hélène",
+    "location": {
+      "lat": 49.697665,
+      "lng": 5.314836
+    }
+  },
+  {
+    "title": "Abbaye Notre-Dame d'Orval",
+    "location": {
+      "lat": 49.639723,
+      "lng": 5.349465
+    }
+  },
+  {
+    "title": "Brasserie Gengoulf",
+    "location": {
+      "lat": 49.619065,
+      "lng": 5.339604
+    }
+  },
+  {
+    "title": "Brasserie de Bouillon",
+    "location": {
+      "lat": 49.824295,
+      "lng": 5.087184
+    }
+  },
+  {
+    "title": "Brasserie de Grandvoir",
+    "location": {
+      "lat": 49.854538,
+      "lng": 5.376178
+    }
+  },
+  {
+    "title": "La Ferme au Chêne",
+    "location": {
+      "lat": 50.35108,
+      "lng": 5.45381
+    }
+  },
+  {
+    "title": "Brasserie Saint-Monon",
+    "location": {
+      "lat": 50.142419,
+      "lng": 5.311714
+    }
+  },
+  {
+    "title": "Brasserie d'Oster",
+    "location": {
+      "lat": 50.271882,
+      "lng": 5.657405
+    }
+  },
+  {
+    "title": "Brasserie Fantôme",
+    "location": {
+      "lat": 50.286121,
+      "lng": 5.512898
+    }
+  },
+  {
+    "title": "Brasserie de la Clochette",
+    "location": {
+      "lat": 49.563565,
+      "lng": 5.525236
+    }
+  }
+]

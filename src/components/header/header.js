@@ -1,10 +1,8 @@
 import React from 'react';
-import Nav from '../nav/nav.js';
 
-const Header = () => {
+const Header = ({shownBreweries}) => {
   return (
     <header>
-      <Nav/>
       <h1>BeerMap</h1>
     </header>
   );
