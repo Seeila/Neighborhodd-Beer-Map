@@ -23,6 +23,7 @@ input[type='text'] {
    box-sizing: border-box;
    background: linear-gradient(to right, #000, var(--gradient-color));
    transition:0.5s;
+   z-index:50;
 }
 
 #searchBar.open {

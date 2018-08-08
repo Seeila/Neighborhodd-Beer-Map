@@ -15,7 +15,6 @@ class Nav extends Component {
    }
 
    render() {
-     console.log(this.state.searchBarIsOpen);
      return (
        <nav role="navigation">
          <button id="menubutton" aria-haspopup="true" aria-expanded="false" aria-controls="searchBar" aria-label="Search Pannel" onClick={this.toggleMenu.bind(this)} className={this.state.searchBarIsOpen ? 'open': null} >
@@ -27,6 +26,6 @@ class Nav extends Component {
        </nav>
      );
   }
-};
+}
 
 export default Nav;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/header/header.js';
 import Nav from './components/nav/nav.js';
+import MapContainer from './components/map/mapContainer.js';
 import './App.css';
 import breweries from './data/breweries.json';
 
@@ -24,8 +25,9 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <Header shownBreweries={shownBreweries/>
+        <Header />
         <Nav shownBreweries={shownBreweries}/>
+        <MapContainer shownBreweries={shownBreweries}/>
       </React.Fragment>
     );
   }
