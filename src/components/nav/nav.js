@@ -10,15 +10,20 @@ class Nav extends Component {
       }
    }
 
+   toggleMenu() {
+     this.setState(prevState => ({searchBarIsOpen: !prevState.searchBarIsOpen }));
+   }
+
    render() {
+     console.log(this.state.searchBarIsOpen);
      return (
        <nav role="navigation">
-         <button id="menubutton" aria-haspopup="true" aria-expanded="false" aria-controls="searchBar" aria-label="Search Pannel">
+         <button id="menubutton" aria-haspopup="true" aria-expanded="false" aria-controls="searchBar" aria-label="Search Pannel" onClick={this.toggleMenu.bind(this)} className={this.state.searchBarIsOpen ? 'open': null} >
            <span></span>
            <span></span>
            <span></span>
          </button>
-         <SearchBar />
+         <SearchBar shownBreweries={this.props.shownBreweries} searchBarIsOpen={this.state.searchBarIsOpen}/>
        </nav>
      );
   }

@@ -1,11 +1,12 @@
 #menubutton {
-   position:absolute;
+   position:fixed;
    width:40px;
    height:40px;
    top:20px;
    left:20px;
    background:none;
    border:none;
+   z-index:100;
 }
 
 #menubutton span {
@@ -16,6 +17,7 @@
    height:5px;
    border-radius: 10px;
    background:#fff;
+   transition:0.75s;
 }
 
 #menubutton span:nth-of-type(2) {
@@ -25,12 +27,17 @@
    top:30px;
 }
 
-#searchBar {
-   position:fixed;
-   width:100%;
-   height:calc(100vh - 75px);
-   margin-top:75px;
-   padding: 20px;
-   box-sizing: border-box;
-   background: linear-gradient(to right, #000, var(--gradient-color));
+
+#menubutton.open span:first-of-type {
+   transform: rotate(45deg);
+   transform-origin: top left;
+}
+
+#menubutton.open span:nth-of-type(2) {
+   display:none;
+}
+#menubutton.open span:last-of-type {
+  top:27px;
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
 }

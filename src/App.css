@@ -11,6 +11,27 @@ body {
    font-family: 'Open sans',arial, sans-serif;
 }
 
+h1 {
+   margin:  27px 20px 20px 80px;
+   color:#fff;
+   text-transform: uppercase;
+   z-index:100;
+}
+
+ h2 {
+   font-weight:500;
+   font-size:1.4em;
+ }
+
+ ul {
+   padding-left: 0;
+ }
+
+ li {
+   list-style: none;
+   line-height:1.5em;
+ }
+
 
 @import './components/header/header.css';
 @import './components/nav/nav.css';
