@@ -10,7 +10,7 @@ class App extends Component {
   constructor(props) {
      super(props);
      this.state = {
-        shownBreweries:[]
+        shownBreweries:[],
      }
   }
 
@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   render() {
-    const {shownBreweries} = this.state;
+    const {shownBreweries } = this.state;
 
     if(!shownBreweries.length) return <p>Loading</p>;
 
