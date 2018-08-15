@@ -4,9 +4,11 @@ import Markers from "./markers.js";
 import MapStyle from './mapStyle.json';
 
 const Map = withScriptjs(withGoogleMap((props) =>{
+
   return (
+
       <GoogleMap
-        ref={props.onMapLoad}
+         ref={(map) => this._map = map}
         defaultZoom={9}
         center={ {lat: 50.054689, lng: 5.467698} }
         defaultOptions={{ styles: MapStyle }}
@@ -14,6 +16,7 @@ const Map = withScriptjs(withGoogleMap((props) =>{
         {props.shownBreweries.map(brewery => (
             <Markers
                brewery={brewery}
+               allBeers={props.allBeers}
                key={brewery.title + '-marker'} toggleInfoWindow={props.toggleInfoWindow}
                infoWindowIsOpen={props.infoWindowIsOpen}
             />
