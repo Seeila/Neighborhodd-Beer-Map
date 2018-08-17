@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Marker } from "react-google-maps";
 import BeerIcon from "../../img/icon.png";
 import MapInfoWindow from "./infoWindow.js";
+import PropTypes from 'prop-types';
 
 class Markers extends Component  {
 	constructor(props, context) {
@@ -16,22 +17,25 @@ class Markers extends Component  {
 		this.setState(prevState => ({infoWindowIsOpen: !prevState.infoWindowIsOpen }));
 	}
 
-	componentDidMount() {
-	 this.filterBeersFromBrewery(this.props.brewery);
-	}
-
-	filterBeersFromBrewery(brewery) {
-		const beersFromBrewery = this.props.allBeers.filter(beer => beer.brewery.name === brewery.title);
-
-		this.setState({ brewerysBeers : beersFromBrewery });
-	}
+	// componentDidMount() {
+	//  this.filterBeersFromBrewery(this.props.brewery);
+	// }
+	//
+	// filterBeersFromBrewery(brewery) {
+	// 	const beersFromBrewery = this.props.allBeers.filter(beer => beer.brewery.brewery_name === brewery.title);
+	//
+	// 	this.setState({ brewerysBeers : beersFromBrewery });
+	// }
 
 
 	render() {
 		const {brewery} = this.props;
 		const {infoWindowIsOpen, brewerysBeers} = this.state;
 
+
 		return (
+			<React.Fragment>
+				 {infoWindowIsOpen && <MapInfoWindow brewery={brewery} brewerysBeers={brewerysBeers} infoWindowIsOpen={infoWindowIsOpen} key={brewery.title + '-infoWindow'}/>}
 	      <Marker
 				ref={(map) => this._map = map}
 	         position={brewery.location}
@@ -40,8 +44,8 @@ class Markers extends Component  {
 	         animation={window.google.maps.Animation.DROP}
 				onClick={() => this.toggleInfoWindow()}
 	      >
-			 {infoWindowIsOpen && <MapInfoWindow brewery={brewery} brewerysBeers={brewerysBeers} infoWindowIsOpen={infoWindowIsOpen} key={brewery.title + '-infoWindow'}/>}
 	      </Marker>
+			</React.Fragment>
 		)
 	}
 }

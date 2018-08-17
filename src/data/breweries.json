@@ -1,6 +1,7 @@
 [
   {
     "title": "Brasserie Inter-Pol",
+    "id": "ChIJ15fyNG8UwEcRhfo_mxhfmvM",
     "location": {
       "lat": 50.152029,
       "lng": 5.768756
@@ -8,20 +9,24 @@
   },
   {
     "title": "Brasserie d'Achouffe",
+    "id": "ChIJR2SGwU4UwEcRZCOcPEmBMHk",
     "location": {
       "lat": 50.14958,
       "lng": 5.74086
     }
   },
   {
-    "title": "Brasseries Les 3 Fourquets",
+    "title": "Brasseries Lupulus",
+    "id": "ChIJ_YgXVaNywEcRFoulRdEdBm8",
     "location": {
       "lat": 50.215863,
       "lng": 5.913561
     }
   },
   {
-    "title": "Brasserie Oxymore",
+    "title": "Oxymore",
+    "id":
+      "EiFSdWUgVmVydGUgMSwgNjY3MCBHb3V2eSwgQmVsZ2lxdWUiMBIuChQKEgkx8sThCA3ARxFWE31QeJLtSBABKhQKEglVealgAQ3ARxGguiBFHznwUw",
     "location": {
       "lat": 50.159651,
       "lng": 5.924312
@@ -29,6 +34,7 @@
   },
   {
     "title": "Brasserie Demanez",
+    "id": "ChIJvQRVFe4jwEcRcJxbLbNFzjs",
     "location": {
       "lat": 49.981295,
       "lng": 5.566674
@@ -36,13 +42,15 @@
   },
   {
     "title": "Brasserie de l'Attrait",
+    "id": "ChIJtZyKgI0XwEcRwgoz1XuElDA",
     "location": {
       "lat": 50.090829,
       "lng": 5.680886
     }
   },
   {
-    "title": "Brasserie artisanale de Rulles",
+    "title": "Brasserie Artisanale de Rulles",
+    "id": "ChIJoyEn0oaX6kcRnoRGowTfGfU",
     "location": {
       "lat": 49.718362,
       "lng": 5.557651
@@ -50,34 +58,39 @@
   },
   {
     "title": "Brasserie Artisanale Millevertus",
+    "id": "ChIJ5YSMe3O66kcR4c9j2ZjS8AA",
     "location": {
       "lat": 49.695298,
       "lng": 5.492434
     }
   },
   {
-    "title": "Brasserie des Tchèts",
+    "title": "Brasserie Des Tchets",
+    "id": "ChIJDRAmsUoowEcRlVrZ1dNk-2Y",
     "location": {
       "lat": 49.915002,
       "lng": 5.390858
     }
   },
   {
-    "title": "Brasserie Sainte-Hélène",
+    "title": "Brasserie Sainte Hélène",
+    "id": "ChIJTxMJ2yWP6kcRB8AS5EUHHj8",
     "location": {
       "lat": 49.697665,
       "lng": 5.314836
     }
   },
   {
-    "title": "Abbaye Notre-Dame d'Orval",
+    "title": "Brasserie d'Orval",
+    "id": "ChIJVVVVGdCN6kcR1E0t8_YsSJE",
     "location": {
       "lat": 49.639723,
       "lng": 5.349465
     }
   },
   {
-    "title": "Brasserie Gengoulf",
+    "title": "Gengoulf SCRL",
+    "id": "ChIJa8LaHbKN6kcRQyoR_BnQrKY",
     "location": {
       "lat": 49.619065,
       "lng": 5.339604
@@ -85,13 +98,16 @@
   },
   {
     "title": "Brasserie de Bouillon",
+    "id":
+      "EixSdWUgZGUgbGEgR2lyYWZlIDc2LCA2ODMyIEJvdWlsbG9uLCBCZWxnaXF1ZSIaEhgKFAoSCQmQuC7We-pHEf6knGKkrEz-EEw",
     "location": {
       "lat": 49.824295,
       "lng": 5.087184
     }
   },
   {
-    "title": "Brasserie de Grandvoir",
+    "title": "Château de Grandvoir",
+    "id": "ChIJRcMb51SC6kcRioBxBX5umPQ",
     "location": {
       "lat": 49.854538,
       "lng": 5.376178
@@ -99,6 +115,7 @@
   },
   {
     "title": "La Ferme au Chêne",
+    "id": "ChIJJfE7zV1OwEcRQJhLwY_rkqs",
     "location": {
       "lat": 50.35108,
       "lng": 5.45381
@@ -106,13 +123,15 @@
   },
   {
     "title": "Brasserie Saint-Monon",
+    "id": "ChIJA0U4Q2AzwEcRn8aWvxw6z5I",
     "location": {
       "lat": 50.142419,
       "lng": 5.311714
     }
   },
   {
-    "title": "Brasserie d'Oster",
+    "title": "Oster",
+    "id": "ChIJf-5QAXVBwEcRVn4xMLXuGGE",
     "location": {
       "lat": 50.271882,
       "lng": 5.657405
@@ -120,6 +139,7 @@
   },
   {
     "title": "Brasserie Fantôme",
+    "id": "ChIJzSW3OadIwEcRvjcxktG2k6s",
     "location": {
       "lat": 50.286121,
       "lng": 5.512898
@@ -127,6 +147,7 @@
   },
   {
     "title": "Brasserie de la Clochette",
+    "id": "ChIJyTlprIW96kcRKlSct1dVAtQ",
     "location": {
       "lat": 49.563565,
       "lng": 5.525236

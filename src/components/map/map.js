@@ -2,6 +2,7 @@ import React from "react";
 import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
 import Markers from "./markers.js";
 import MapStyle from './mapStyle.json';
+import { MAP } from 'react-google-maps/lib/constants';
 
 const Map = withScriptjs(withGoogleMap((props) =>{
 
@@ -16,7 +17,7 @@ const Map = withScriptjs(withGoogleMap((props) =>{
         {props.shownBreweries.map(brewery => (
             <Markers
                brewery={brewery}
-               allBeers={props.allBeers}
+               //allBeers={props.allBeers}
                key={brewery.title + '-marker'} toggleInfoWindow={props.toggleInfoWindow}
                infoWindowIsOpen={props.infoWindowIsOpen}
             />
