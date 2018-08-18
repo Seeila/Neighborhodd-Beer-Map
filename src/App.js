@@ -4,6 +4,7 @@ import Header from "./components/header/header.js";
 import Nav from "./components/nav/nav.js";
 import MapContainer from "./components/map/mapContainer.js";
 import "./App.css";
+//imports the location, id and name of the breweries
 import breweries from "./data/breweries.json";
 
 class App extends Component {
@@ -20,6 +21,8 @@ class App extends Component {
       this.setState({ shownBreweries: breweries });
    }
 
+   // shows the breweries depending the search results,
+   //If there is no query, all breweries are shown
    updateShownBreweries = query => {
       if (query.length > 0) {
          const match = new RegExp(escapeRegExp(query), "i");

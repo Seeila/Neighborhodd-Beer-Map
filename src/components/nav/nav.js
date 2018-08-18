@@ -15,6 +15,7 @@ class Nav extends Component {
       updateShownBreweries: PropTypes.func.isRequired
    };
 
+   // change the state of the searchbar from open to closed
    toggleMenu() {
       this.setState(prevState => ({
          searchBarIsOpen: !prevState.searchBarIsOpen

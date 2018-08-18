@@ -10,7 +10,7 @@ class MapInfoWindow extends Component {
          breweryInfos: []
       };
    }
-
+   // necessary to retrieve the map's ID
    static contextTypes = { [MAP]: PropTypes.object };
 
    static propTypes = {
@@ -23,11 +23,12 @@ class MapInfoWindow extends Component {
       this.getPlaceDetails();
    }
 
+   //get details of place via google maps place service
    getPlaceDetails = () => {
       const service = new window.google.maps.places.PlacesService(
+         // gets the id of the map
          this.context[MAP]
       );
-
       service.getDetails(
          { placeId: this.props.brewery.id },
          (place, status) => {
@@ -54,7 +55,7 @@ class MapInfoWindow extends Component {
                   src={
                      breweryInfos.photos
                         ? breweryInfos.photos[0].getUrl({
-                             maxWidth: 330,
+                             "maxWidth": 400,
                              "max-height": 300
                           })
                         : Brewery

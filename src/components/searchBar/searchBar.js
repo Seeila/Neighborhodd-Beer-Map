@@ -15,6 +15,7 @@ class SearchBar extends Component {
       updateShownBreweries: PropTypes.func.isRequired
    };
 
+   //updates the query state and the showed breweries depending the query
    updateQuery = query => {
       this.setState({ query: query.trim() });
       this.props.updateShownBreweries(query);
