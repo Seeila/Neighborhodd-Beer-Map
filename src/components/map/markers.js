@@ -44,6 +44,7 @@ class Markers extends Component {
                   brewery={brewery}
                   brewerysBeers={brewerysBeers}
                   infoWindowIsOpen={infoWindowIsOpen}
+						toggleInfoWindow={this.toggleInfoWindow}
                   key={brewery.title + "-infoWindow"}
                />
             )}

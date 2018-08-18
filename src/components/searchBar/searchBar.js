@@ -11,7 +11,7 @@ class SearchBar extends Component {
 
    static propTypes = {
       shownBreweries: PropTypes.array.isRequired,
-      searchBarIsOpen: PropTypes.func
+      searchBarIsOpen: PropTypes.bool.isRequired
    };
 
    render() {

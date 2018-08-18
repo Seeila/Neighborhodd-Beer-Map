@@ -32,6 +32,11 @@ h1 {
    line-height:1.5em;
  }
 
+.map {
+   position:fixed;
+   width:100vw;
+   height: calc(100vh- 95px);
+}
 
 @import './components/header/header.css';
 @import './components/nav/nav.css';

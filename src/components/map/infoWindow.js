@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { InfoBox } from "react-google-maps/lib/components/addons/InfoBox";
 import PropTypes from "prop-types";
 import BeerIcon from "../../img/icon.png";
 import { MAP } from "react-google-maps/lib/constants";
@@ -37,21 +36,21 @@ class MapInfoWindow extends Component {
    };
 
    render() {
-      const { brewery, brewerysBeers } = this.props;
+      const { brewery, brewerysBeers,toggleInfoWindow } = this.props;
       const { breweryInfos } = this.state;
       console.log(breweryInfos);
 
       return (
-         <InfoBox defaultPosition={{ lat: 50.054689, lng: 5.467698 }}>
-            <section className="infoWindow">
-               <img
-                  src={
-                     breweryInfos.photos
-                        ? breweryInfos.photos[0].getUrl({
-                             maxWidth: 330,
-                             "max-height": 300
-                          })
-                        : BeerIcon
+         <article className="infoWindow">
+            <button aria-label="close" className="close-button" onClick={() => toggleInfoWindow()}>X</button>
+            <header>
+               <img src={
+                  breweryInfos.photos
+                     ? breweryInfos.photos[0].getUrl({
+                          maxWidth: 330,
+                          "max-height": 300
+                       })
+                     : BeerIcon
                   }
                   alt={
                      breweryInfos.photos
@@ -60,6 +59,8 @@ class MapInfoWindow extends Component {
                   }
                />
                <h2>{brewery.title}</h2>
+            </header>
+            <main>
                {breweryInfos.formatted_address && (
                   <p>{breweryInfos.formatted_address}</p>
                )}
@@ -83,8 +84,8 @@ class MapInfoWindow extends Component {
                )}
 
                <h3>Beers</h3>
-            </section>
-         </InfoBox>
+            </main>
+         </article>
       );
    }
 }
