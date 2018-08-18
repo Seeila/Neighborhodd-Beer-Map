@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchBar from '../searchBar/searchBar.js';
+import PropTypes from "prop-types";
 
 class Nav extends Component {
    constructor(props) {
@@ -8,6 +9,10 @@ class Nav extends Component {
          searchBarIsOpen:false,
          query: ''
       }
+   }
+
+   static propTypes = {
+      shownBreweries: PropTypes.array.isRequired
    }
 
    toggleMenu() {
