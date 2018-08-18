@@ -1,36 +1,50 @@
-import React, { Component } from 'react';
-import SearchBar from '../searchBar/searchBar.js';
+import React, { Component } from "react";
+import SearchBar from "../searchBar/searchBar.js";
 import PropTypes from "prop-types";
 
 class Nav extends Component {
    constructor(props) {
       super(props);
       this.state = {
-         searchBarIsOpen:false,
-         query: ''
-      }
+         searchBarIsOpen: false
+      };
    }
 
    static propTypes = {
-      shownBreweries: PropTypes.array.isRequired
-   }
+      shownBreweries: PropTypes.array.isRequired,
+      updateShownBreweries: PropTypes.func.isRequired
+   };
 
    toggleMenu() {
-     this.setState(prevState => ({searchBarIsOpen: !prevState.searchBarIsOpen }));
+      this.setState(prevState => ({
+         searchBarIsOpen: !prevState.searchBarIsOpen
+      }));
    }
 
    render() {
-     return (
-       <nav role="navigation">
-         <button id="menubutton" aria-haspopup="true" aria-expanded="false" aria-controls="searchBar" aria-label="Search Pannel" onClick={this.toggleMenu.bind(this)} className={this.state.searchBarIsOpen ? 'open': null} >
-           <span></span>
-           <span></span>
-           <span></span>
-         </button>
-         <SearchBar shownBreweries={this.props.shownBreweries} searchBarIsOpen={this.state.searchBarIsOpen}/>
-       </nav>
-     );
-  }
+      return (
+         <nav role="navigation">
+            <button
+               id="menubutton"
+               aria-haspopup="true"
+               aria-expanded="false"
+               aria-controls="searchBar"
+               aria-label="Search Pannel"
+               onClick={this.toggleMenu.bind(this)}
+               className={this.state.searchBarIsOpen ? "open" : null}
+            >
+               <span />
+               <span />
+               <span />
+            </button>
+            <SearchBar
+               shownBreweries={this.props.shownBreweries}
+               searchBarIsOpen={this.state.searchBarIsOpen}
+               updateShownBreweries={this.props.updateShownBreweries}
+            />
+         </nav>
+      );
+   }
 }
 
 export default Nav;

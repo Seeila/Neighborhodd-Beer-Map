@@ -1,44 +1,44 @@
-@import './normalize.css';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import "./normalize.css";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
 
 :root {
-  --main-color: #F59B45;
-  --gradient-color: rgba(22,65,79, 0.6);
+   --main-color: #f59b45;
+   --gradient-color: rgba(22, 65, 79, 0.6);
 }
 
 body {
-   color:#fff;
-   font-family: 'Open sans',arial, sans-serif;
+   color: #fff;
+   font-family: "Open sans", arial, sans-serif;
 }
 
 h1 {
-   margin:  27px 20px 20px 80px;
-   color:#fff;
+   margin: 27px 20px 20px 80px;
+   color: #fff;
    text-transform: uppercase;
-   z-index:100;
+   z-index: 100;
 }
 
- h2 {
-   font-weight:500;
-   font-size:1.4em;
- }
+h2 {
+   font-weight: 500;
+   font-size: 1.4em;
+}
 
- ul {
+ul {
    padding-left: 0;
- }
+}
 
- li {
+li {
    list-style: none;
-   line-height:1.5em;
- }
+   line-height: 1.5em;
+}
 
 .map {
-   position:fixed;
-   width:100vw;
+   position: fixed;
+   width: 100vw;
    height: calc(100vh- 95px);
 }
 
-@import './components/header/header.css';
-@import './components/nav/nav.css';
-@import './components/searchBar/searchBar.css';
-@import './components/map/infowindow.css';
+@import "./components/header/header.css";
+@import "./components/nav/nav.css";
+@import "./components/searchBar/searchBar.css";
+@import "./components/map/infowindow.css";

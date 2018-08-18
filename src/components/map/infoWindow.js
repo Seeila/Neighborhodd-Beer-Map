@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import BeerIcon from "../../img/icon.png";
+import Brewery from "../../img/brewery.jpg";
 import { MAP } from "react-google-maps/lib/constants";
 
 class MapInfoWindow extends Component {
@@ -15,7 +15,8 @@ class MapInfoWindow extends Component {
 
    static propTypes = {
       brewery: PropTypes.object.isRequired,
-      brewerysBeers: PropTypes.array.isRequired
+      brewerysBeers: PropTypes.array.isRequired,
+      toggleInfoWindow: PropTypes.func.isRequired
    };
 
    componentDidMount() {
@@ -36,21 +37,27 @@ class MapInfoWindow extends Component {
    };
 
    render() {
-      const { brewery, brewerysBeers,toggleInfoWindow } = this.props;
+      const { brewery, brewerysBeers, toggleInfoWindow } = this.props;
       const { breweryInfos } = this.state;
-      console.log(breweryInfos);
 
       return (
          <article className="infoWindow">
-            <button aria-label="close" className="close-button" onClick={() => toggleInfoWindow()}>X</button>
+            <button
+               aria-label="close"
+               className="close-button"
+               onClick={() => toggleInfoWindow()}
+            >
+               X
+            </button>
             <header>
-               <img src={
-                  breweryInfos.photos
-                     ? breweryInfos.photos[0].getUrl({
-                          maxWidth: 330,
-                          "max-height": 300
-                       })
-                     : BeerIcon
+               <img
+                  src={
+                     breweryInfos.photos
+                        ? breweryInfos.photos[0].getUrl({
+                             maxWidth: 330,
+                             "max-height": 300
+                          })
+                        : Brewery
                   }
                   alt={
                      breweryInfos.photos
