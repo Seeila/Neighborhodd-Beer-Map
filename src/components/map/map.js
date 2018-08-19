@@ -1,25 +1,34 @@
 import React from "react";
 import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
+import MapInfoWindow from "./infoWindow.js";
+import Marker from "./markers.js";
 import PropTypes from "prop-types";
-import Markers from "./markers.js";
 import MapStyle from "./mapStyle.json";
 
 const Map = withScriptjs(
    withGoogleMap(props => {
+      //changes icon of marker when hovered or clicked
+
       return (
          <GoogleMap
-            ref={map => (this._map = map)}
             defaultZoom={9}
             center={{ lat: 50.054689, lng: 5.467698 }}
             defaultOptions={{ styles: MapStyle }}
+            onClick={() => props.resetActiveMarker()}
          >
+            {props.infoWindowIsOpen && (
+               <MapInfoWindow
+                  resetActiveMarker={props.resetActiveMarker}
+                  activeMarker={props.activeMarker}
+               />
+            )}
+
             {props.shownBreweries.map(brewery => (
-               <Markers
+               <Marker
                   brewery={brewery}
-                  //allBeers={props.allBeers}
                   key={brewery.title + "-marker"}
-                  toggleInfoWindow={props.toggleInfoWindow}
-                  infoWindowIsOpen={props.infoWindowIsOpen}
+                  animation={window.google.maps.Animation.DROP}
+                  onClickedMarker={props.onClickedMarker}
                />
             ))}
          </GoogleMap>
@@ -29,9 +38,8 @@ const Map = withScriptjs(
 
 Map.propTypes = {
    shownBreweries: PropTypes.array.isRequired,
-   allBeers: PropTypes.array.isRequired,
-   toggleInfoWindow: PropTypes.func,
-   infoWindowIsOpen: PropTypes.func
+   infoWindowIsOpen: PropTypes.bool.isRequired,
+   onClickedMarker: PropTypes.func.isRequired
 };
 
 export default Map;

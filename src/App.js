@@ -12,8 +12,9 @@ class App extends Component {
       super(props);
       this.state = {
          shownBreweries: [],
-         allBeers: [],
-         query: ""
+         query: "",
+         activeMarker: {},
+         infoWindowIsOpen: false
       };
    }
 
@@ -35,9 +36,29 @@ class App extends Component {
       }
    };
 
-   render() {
-      const { shownBreweries, allBeers } = this.state;
+   resetActiveMarker = () => {
+      this.setState({
+         activeMarker: null,
+         infoWindowIsOpen: false
+      });
+   };
 
+   onClickedMarker = brewery => {
+      if (this.state.infoWindowIsOpen) {
+         this.resetActiveMarker();
+      }
+      this.setState({
+         activeMarker: brewery,
+         infoWindowIsOpen: true
+      });
+   };
+
+   render() {
+      const {
+         shownBreweries,
+         activeMarker,
+         infoWindowIsOpen
+      } = this.state;
       // if(!allBeers.length) return <p>Loading</p>;
       return (
          <React.Fragment>
@@ -45,8 +66,15 @@ class App extends Component {
             <Nav
                shownBreweries={shownBreweries}
                updateShownBreweries={this.updateShownBreweries}
+               onClickedMarker={this.onClickedMarker}
             />
-            <MapContainer shownBreweries={shownBreweries} allBeers={allBeers} />
+            <MapContainer
+               shownBreweries={shownBreweries}
+               onClickedMarker={this.onClickedMarker}
+               infoWindowIsOpen={infoWindowIsOpen}
+               activeMarker={activeMarker}
+               resetActiveMarker={this.resetActiveMarker}
+            />
          </React.Fragment>
       );
    }

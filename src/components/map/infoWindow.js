@@ -14,12 +14,16 @@ class MapInfoWindow extends Component {
    static contextTypes = { [MAP]: PropTypes.object };
 
    static propTypes = {
-      brewery: PropTypes.object.isRequired,
-      brewerysBeers: PropTypes.array.isRequired,
-      toggleInfoWindow: PropTypes.func.isRequired
+      activeMarker: PropTypes.object.isRequired,
+      resetActiveMarker: PropTypes.func.isRequired
    };
 
    componentDidMount() {
+      this.getPlaceDetails();
+   }
+
+   //needed to update place service when clicking on the search list item
+   componentDidUpdate() {
       this.getPlaceDetails();
    }
 
@@ -30,7 +34,7 @@ class MapInfoWindow extends Component {
          this.context[MAP]
       );
       service.getDetails(
-         { placeId: this.props.brewery.id },
+         { placeId: this.props.activeMarker.id },
          (place, status) => {
             if (status === "OK") this.setState({ breweryInfos: place });
          }
@@ -38,7 +42,7 @@ class MapInfoWindow extends Component {
    };
 
    render() {
-      const { brewery, brewerysBeers, toggleInfoWindow } = this.props;
+      const { resetActiveMarker, activeMarker } = this.props;
       const { breweryInfos } = this.state;
 
       return (
@@ -46,7 +50,7 @@ class MapInfoWindow extends Component {
             <button
                aria-label="close"
                className="close-button"
-               onClick={() => toggleInfoWindow()}
+               onClick={() => resetActiveMarker()}
             >
                X
             </button>
@@ -55,7 +59,7 @@ class MapInfoWindow extends Component {
                   src={
                      breweryInfos.photos
                         ? breweryInfos.photos[0].getUrl({
-                             "maxWidth": 400,
+                             maxWidth: 400,
                              "max-height": 300
                           })
                         : Brewery
@@ -63,10 +67,10 @@ class MapInfoWindow extends Component {
                   alt={
                      breweryInfos.photos
                         ? breweryInfos.photos[0].html_attributions[0]
-                        : brewery.title
+                        : activeMarker.title
                   }
                />
-               <h2>{brewery.title}</h2>
+               <h2>{activeMarker.title}</h2>
             </header>
             <main>
                {breweryInfos.formatted_address && (

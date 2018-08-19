@@ -12,7 +12,8 @@ class Nav extends Component {
 
    static propTypes = {
       shownBreweries: PropTypes.array.isRequired,
-      updateShownBreweries: PropTypes.func.isRequired
+      updateShownBreweries: PropTypes.func.isRequired,
+      onClickedMarker: PropTypes.func.isRequired
    };
 
    // change the state of the searchbar from open to closed
@@ -42,6 +43,7 @@ class Nav extends Component {
                shownBreweries={this.props.shownBreweries}
                searchBarIsOpen={this.state.searchBarIsOpen}
                updateShownBreweries={this.props.updateShownBreweries}
+               onClickedMarker={this.props.onClickedMarker}
             />
          </nav>
       );

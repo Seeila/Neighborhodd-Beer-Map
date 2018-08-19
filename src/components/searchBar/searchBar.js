@@ -12,7 +12,8 @@ class SearchBar extends Component {
    static propTypes = {
       shownBreweries: PropTypes.array.isRequired,
       searchBarIsOpen: PropTypes.bool.isRequired,
-      updateShownBreweries: PropTypes.func.isRequired
+      updateShownBreweries: PropTypes.func.isRequired,
+      onClickedMarker: PropTypes.func.isRequired
    };
 
    //updates the query state and the showed breweries depending the query
@@ -36,7 +37,11 @@ class SearchBar extends Component {
             />
             <ul>
                {this.props.shownBreweries.map(brewery => (
-                  <li key={brewery.title}>{brewery.title}</li>
+                  <li key={brewery.title}>
+                     <button onClick={() => this.props.onClickedMarker(brewery)}>
+                        {brewery.title}
+                     </button>
+                  </li>
                ))}
             </ul>
          </section>
