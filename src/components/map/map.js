@@ -7,8 +7,6 @@ import MapStyle from "./mapStyle.json";
 
 const Map = withScriptjs(
    withGoogleMap(props => {
-      //changes icon of marker when hovered or clicked
-
       return (
          <GoogleMap
             defaultZoom={9}

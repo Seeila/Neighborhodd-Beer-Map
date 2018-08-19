@@ -50,6 +50,10 @@ input[type="text"] {
    font-size: 1.2em;
 }
 
+.focused {
+   border: 1px solid var(--main-color);
+}
+
 @media screen and (min-width: 800px) {
    #searchBar {
       padding: 20px 40px 40px;
