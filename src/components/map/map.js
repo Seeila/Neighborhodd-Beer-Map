@@ -22,6 +22,7 @@ const Map = withScriptjs(
          >
             {props.infoWindowIsOpen && (
                <MapInfoWindow
+                  allBeers={props.allBeers}
                   resetActiveMarker={props.resetActiveMarker}
                   activeMarker={props.activeMarker}
                />

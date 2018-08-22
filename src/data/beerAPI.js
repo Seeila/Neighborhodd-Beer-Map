@@ -6,18 +6,20 @@ const limit = 50;
 
 export const getAllBeers = () => {
    let beers = [];
+   let fetches = []
 
    for(let i=0; i < 150; i+=50) {
-      fetch(`${api}/${user}?client-id=${client_id}&client_secret=${client_secret}&limit=${limit}&offset=${i}`).then(response => {
-         return response.json();
-      }).then(response => {
-         beers.push(...response.response.beers.items);
-      }).then(() => {
-            if(beers.length > 100) {
-               return beers;
-            }
-      });
+      fetches.push(
+         fetch(`${api}/${user}?client_id=${client_id}&client_secret=${client_secret}&limit=${limit}&offset=${i}`).then(response => {
+            return response.json();
+         }).then(response => {
+            beers.push(...response.response.beers.items);
+            return beers;
+         }).catch((status) => console.log(status))
+      )
    }
+
+   return Promise.all(fetches);
 }
 
 //  let beers = [];

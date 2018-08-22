@@ -7,13 +7,16 @@ class MapInfoWindow extends Component {
    constructor(props) {
       super(props);
       this.state = {
-         breweryInfos: []
+         breweryInfos: [],
+         noStatusError: true,
+         brewerysBeers: []
       };
    }
    // necessary to retrieve the map's ID
    static contextTypes = { [MAP]: PropTypes.object };
 
    static propTypes = {
+      allBeers: PropTypes.array.isRequired,
       activeMarker: PropTypes.object.isRequired,
       resetActiveMarker: PropTypes.func.isRequired
    };
@@ -21,17 +24,22 @@ class MapInfoWindow extends Component {
    componentDidMount() {
       this.getPlaceDetails();
       this.breweryTitle.focus();
+      this.findBrewerysBeers();
    }
 
    //needed to update place service when clicking on the search list item
    componentDidUpdate() {
-      this.getPlaceDetails();
       this.breweryTitle.focus();
    }
 
    componentWillUnmount() {
       const searchResultsList = document.querySelector('ul[role="listbox"]');
       if(searchResultsList) searchResultsList.focus();
+   }
+
+   findBrewerysBeers() {
+      let brewerysBeers = this.props.allBeers.filter(beer => beer.brewery.brewery_name === this.props.activeMarker.title);
+      console.log(brewerysBeers);
    }
 
    //get details of place via google maps place service
@@ -43,15 +51,19 @@ class MapInfoWindow extends Component {
       service.getDetails(
          { placeId: this.props.activeMarker.id },
          (place, status) => {
-            if (status === "OK") this.setState({ breweryInfos: place });
+            if (status === "OK") {
+               this.setState({ breweryInfos: place });
+            } else {
+               console.log(status);
+               this.setState({ statusError: false });
+            }
          }
       );
    };
 
    render() {
-      const { resetActiveMarker, activeMarker } = this.props;
-      const { breweryInfos } = this.state;
-
+      const { resetActiveMarker, activeMarker, allBeers } = this.props;
+      const { breweryInfos, noStatusError } = this.state;
       return (
          <article className="infoWindow">
             <button
@@ -79,7 +91,9 @@ class MapInfoWindow extends Component {
                />
             <h2 autoFocus ref={b => this.breweryTitle = b} tabIndex="0">{activeMarker.title}</h2>
             </header>
-            <main tabIndex="0">
+
+            {noStatusError && (
+               <main tabIndex="0">
                {breweryInfos.formatted_address && (
                   <p>{breweryInfos.formatted_address}</p>
                )}
@@ -101,9 +115,16 @@ class MapInfoWindow extends Component {
                      </ul>
                   </section>
                )}
-
-               <h3>Beers</h3>
+               {allBeers.length && (
+                  <h3>Beers</h3>
+               )}
             </main>
+            )}
+            {this.state.statusError && (
+               <main>
+                  <p tabIndex="0">Sorry we couldn't load this place informations. Please try again</p>
+               </main>
+            )}
          </article>
       );
    }

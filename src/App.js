@@ -6,12 +6,14 @@ import MapContainer from "./components/map/mapContainer.js";
 import "./App.css";
 //imports the location, id and name of the breweries
 import breweries from "./data/breweries.json";
+import * as BeerAPI from "./data/beerAPI";
 
 class App extends Component {
    constructor(props) {
       super(props);
       this.state = {
          shownBreweries: [],
+         allBeers: [],
          query: "",
          activeMarker: {},
          infoWindowIsOpen: false
@@ -20,7 +22,11 @@ class App extends Component {
 
    componentDidMount() {
       this.setState({ shownBreweries: breweries });
+      BeerAPI.getAllBeers().then(res => {
+         this.setState({ allBeers: res[res.length-1] });
+      });
    }
+
 
    // shows the breweries depending the search results,
    //If there is no query, all breweries are shown
@@ -56,6 +62,7 @@ class App extends Component {
    render() {
       const {
          shownBreweries,
+         allBeers,
          activeMarker,
          infoWindowIsOpen
       } = this.state;
@@ -70,6 +77,7 @@ class App extends Component {
             />
             <MapContainer
                shownBreweries={shownBreweries}
+               allBeers={allBeers}
                onClickedMarker={this.onClickedMarker}
                infoWindowIsOpen={infoWindowIsOpen}
                activeMarker={activeMarker}

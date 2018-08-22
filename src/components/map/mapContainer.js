@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 const MapContainer = ({
    shownBreweries,
+   allBeers,
    onClickedMarker,
    infoWindowIsOpen,
    activeMarker,
@@ -12,6 +13,7 @@ const MapContainer = ({
    return (
       <Map
          shownBreweries={shownBreweries}
+         allBeers={allBeers}
          infoWindowIsOpen={infoWindowIsOpen}
          resetActiveMarker={resetActiveMarker}
          activeMarker={activeMarker}

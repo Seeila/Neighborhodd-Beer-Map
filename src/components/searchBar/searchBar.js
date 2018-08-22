@@ -45,9 +45,11 @@ class SearchBar extends Component {
       }
    }
 
-   clickOnFocusedElement() {
-      const focusedElement = document.getElementById(`listItem${this.state.focusedListItem}`);
-      focusedElement.firstChild.click();
+   clickOnFocusedElement = () => {
+      const buttonElement = document.getElementById(`listItem${this.state.focusedListItem}`).firstChild;
+      let breweryTitle = buttonElement.textContent;
+      let brewery = this.props.shownBreweries.find(brewery => brewery.title ===  breweryTitle);
+      this.props.onClickedMarker(brewery);
    }
 
    focusOnUpperElement() {
