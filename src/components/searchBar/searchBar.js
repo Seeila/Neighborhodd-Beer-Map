@@ -34,16 +34,42 @@ class SearchBar extends Component {
 
    changeItemFocus(event) {
       if(event.which === 40) {
-         this.setState(prevState => ({
-            focusedListItem: prevState.focusedListItem + 1
-         }));
+         this.focusOnUpperElement();
       }
       if(event.which === 38) {
-         this.setState(prevState => ({
-            focusedListItem: (prevState.focusedListItem - 1)
-         }));
+         this.focusOnLowerElement();
+      }
+
+      if(event.which === 13 || event.which === 32) {
+         this.clickOnFocusedElement();
       }
    }
+
+   clickOnFocusedElement() {
+      const focusedElement = document.getElementById(`listItem${this.state.focusedListItem}`);
+      focusedElement.firstChild.click();
+   }
+
+   focusOnUpperElement() {
+      if (this.state.focusedListItem === this.props.shownBreweries.length) {
+         this.setState({focusedListItem : 1})
+      } else {
+         this.setState(prevState => ({
+            focusedListItem: prevState.focusedListItem + 1
+         }))
+      }
+   }
+
+   focusOnLowerElement() {
+      if (this.state.focusedListItem === 1) {
+         this.setState({focusedListItem : this.props.shownBreweries.length})
+      } else {
+         this.setState(prevState => ({
+            focusedListItem: (prevState.focusedListItem - 1)
+         }))
+      }
+   }
+
 
    render() {
       const { shownBreweries, searchBarIsOpen } = this.props;
@@ -66,12 +92,12 @@ class SearchBar extends Component {
          <ul role="listbox"  tabIndex={shownBreweries.length ? "0" : "-1"} aria-activedescendant={`listItem${focusedListItem}`} onKeyDown ={(event) => this.changeItemFocus(event)}>
                {shownBreweries.map((brewery, index) => (
                   <li key={brewery.title}
-                     id={`listItem${index}`}
+                     id={`listItem${index+1}`}
                      role="option"
                      className={focusedListItem === index + 1 ? "focused" : null}
                      aria-selected={focusedListItem === index + 1 ? true : false}
                   >
-                     <button onClick={() => this.props.onClickedMarker(brewery)}>
+                     <button tabIndex="-1"  onClick={() => this.props.onClickedMarker(brewery)}>
                         {brewery.title}
                      </button>
                   </li>

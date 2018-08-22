@@ -20,11 +20,13 @@ class MapInfoWindow extends Component {
 
    componentDidMount() {
       this.getPlaceDetails();
+      this.breweryTitle.focus();
    }
 
    //needed to update place service when clicking on the search list item
    componentDidUpdate() {
       this.getPlaceDetails();
+      this.breweryTitle.focus();
    }
 
    //get details of place via google maps place service
@@ -70,9 +72,9 @@ class MapInfoWindow extends Component {
                         : activeMarker.title
                   }
                />
-               <h2>{activeMarker.title}</h2>
+            <h2 autoFocus ref={b => this.breweryTitle = b} tabIndex="0">{activeMarker.title}</h2>
             </header>
-            <main>
+            <main tabIndex="0">
                {breweryInfos.formatted_address && (
                   <p>{breweryInfos.formatted_address}</p>
                )}
