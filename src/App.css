@@ -37,6 +37,10 @@ li {
    width: 100vw;
    height: calc(100vh- 95px);
 }
+/* Avoids the user to navigate through the empty iframe via keyboard*/
+iframe[aria-hidden="true"] {
+   visibility:hidden;
+}
 
 @import "./components/header/header.css";
 @import "./components/nav/nav.css";

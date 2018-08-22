@@ -11,8 +11,14 @@ const Map = withScriptjs(
          <GoogleMap
             defaultZoom={9}
             center={{ lat: 50.054689, lng: 5.467698 }}
-            defaultOptions={{ styles: MapStyle }}
+            defaultOptions={{
+               styles: MapStyle,
+               mapTypeControl: false,
+               fullscreenControl: false,
+               streetViewControl: false
+            }}
             onClick={() => props.resetActiveMarker()}
+
          >
             {props.infoWindowIsOpen && (
                <MapInfoWindow

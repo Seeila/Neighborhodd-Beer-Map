@@ -29,6 +29,11 @@ class MapInfoWindow extends Component {
       this.breweryTitle.focus();
    }
 
+   componentWillUnmount() {
+      const searchResultsList = document.querySelector('ul[role="listbox"]');
+      if(searchResultsList) searchResultsList.focus();
+   }
+
    //get details of place via google maps place service
    getPlaceDetails = () => {
       const service = new window.google.maps.places.PlacesService(
