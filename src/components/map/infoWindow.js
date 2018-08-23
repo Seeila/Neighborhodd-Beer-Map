@@ -120,8 +120,15 @@ class MapInfoWindow extends Component {
               <section className="beers">
                 <h3>Beers</h3>
                 {brewerysBeers.map(beer => (
-                  <article>
-                    <img src={beer.beer.beer_label} alt={beer.beer.beer_name} />
+                  <article key={beer.beer.beer_slug}>
+                    <img
+                      src={
+                        beer.beer.beer_label
+                          ? beer.beer.beer_label
+                          : "https://untappd.akamaized.net/site/assets/images/temp/badge-beer-default.png"
+                      }
+                      alt={beer.beer.beer_name}
+                    />
                     <h3>{beer.beer.beer_name}</h3>
                     <p>
                       <strong>Style</strong>:<br /> {beer.beer.beer_style}
