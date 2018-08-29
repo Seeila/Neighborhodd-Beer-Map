@@ -25,16 +25,6 @@ class Markers extends Component {
       }));
    };
 
-   // componentDidMount() {
-   //  this.filterBeersFromBrewery(this.props.brewery);
-   // }
-   //
-   // filterBeersFromBrewery(brewery) {
-   // 	const beersFromBrewery = this.props.allBeers.filter(beer => beer.brewery.brewery_name === brewery.title);
-   //
-   // 	this.setState({ brewerysBeers : beersFromBrewery });
-   // }
-
    render() {
       const { brewery, onClickedMarker } = this.props;
       const { MarkerIsActive } = this.state;

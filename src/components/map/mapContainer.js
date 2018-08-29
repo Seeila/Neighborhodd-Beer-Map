@@ -33,6 +33,7 @@ const MapContainer = ({
 
 MapContainer.propTypes = {
    shownBreweries: PropTypes.array.isRequired,
+   allBeers: PropTypes.array.isRequired,
    infoWindowIsOpen: PropTypes.bool.isRequired,
    onClickedMarker: PropTypes.func.isRequired,
    resetActiveMarker: PropTypes.func.isRequired,

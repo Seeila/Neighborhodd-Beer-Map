@@ -42,6 +42,7 @@ class App extends Component {
       }
    };
 
+   // no breweries selected and closes the infoWindow
    resetActiveMarker = () => {
       this.setState({
          activeMarker: null,
@@ -49,6 +50,7 @@ class App extends Component {
       });
    };
 
+   // sets the selected brewery and opens the infoWindow
    onClickedMarker = brewery => {
       if (this.state.infoWindowIsOpen) {
          this.resetActiveMarker();

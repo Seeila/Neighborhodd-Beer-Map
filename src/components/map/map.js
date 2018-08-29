@@ -18,7 +18,6 @@ const Map = withScriptjs(
                streetViewControl: false
             }}
             onClick={() => props.resetActiveMarker()}
-
          >
             {props.infoWindowIsOpen && (
                <MapInfoWindow
