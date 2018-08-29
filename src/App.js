@@ -23,10 +23,9 @@ class App extends Component {
    componentDidMount() {
       this.setState({ shownBreweries: breweries });
       BeerAPI.getAllBeers().then(res => {
-         this.setState({ allBeers: res[res.length-1] });
+         this.setState({ allBeers: res[res.length - 1] });
       });
    }
-
 
    // shows the breweries depending the search results,
    //If there is no query, all breweries are shown
@@ -52,13 +51,14 @@ class App extends Component {
 
    // sets the selected brewery and opens the infoWindow
    onClickedMarker = brewery => {
-      if (this.state.infoWindowIsOpen) {
-         this.resetActiveMarker();
-      }
-      this.setState({
-         activeMarker: brewery,
-         infoWindowIsOpen: true
-      });
+      this.resetActiveMarker();
+
+      setTimeout(() => {
+         this.setState({
+            activeMarker: brewery,
+            infoWindowIsOpen: true
+         });
+      }, 100);
    };
 
    render() {

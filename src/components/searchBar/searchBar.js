@@ -19,7 +19,7 @@ class SearchBar extends Component {
 
    componentDidUpdate() {
       // if the element currently focused is the menu button
-      // setTimeout to focus on iput after the fadeIn animation,
+      // setTimeout to focus on input after the fadeIn animation,
       // doesnt'work if not delayed
       if (document.activeElement === document.getElementById("menubutton")) {
          setTimeout(() => this.searchInput.focus(), 600);
